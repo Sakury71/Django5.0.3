@@ -58,3 +58,20 @@ def search(request):
     q = request.GET.get('q')
     blogs = Blog.objects.filter(Q(title__icontains=q) | Q(content__icontains=q)).all()
     return render(request, 'index.html', context={'blogs': blogs})
+
+
+# 创建一个个人中心的视图函数
+def personal_center(request):
+    return render(request, 'personal_center.html')
+
+# 创建一个关于我们的视图函数
+def about_us(request):
+    return render(request, 'about_us.html')
+
+# 创建一个社区的视图函数
+def community(request):
+    return render(request, 'community.html')
+
+# 创建一个消息的视图函数
+def message(request):
+    return render(request, 'message.html')
